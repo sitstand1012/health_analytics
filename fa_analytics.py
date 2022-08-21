@@ -7,7 +7,7 @@ from factor_analyzer import FactorAnalyzer
 import pandas as pd
 import scipy
 
-dir=r"C:\Users\SitSt\Downloads\archive\Key_indicator_districtwise.csv"
+dir=r"\Path\to\Key_indicator_districtwise.csv"
 alldatas=[]
 length=0
 discardindex=[]
@@ -37,7 +37,7 @@ for i in range(len(alldatas)):
     shaped_data.append(data)
 
 data_labels=shaped_data[0][1:]
-shapedfilename=r"C:\Users\SitSt\Downloads\archive\Key_indicator_districtwise_shaped.csv"
+shapedfilename=r"\Path\to\Key_indicator_districtwise_shaped.csv"
 
 with open(shapedfilename,"w",newline="") as f:
     writer=csv.writer(f)
