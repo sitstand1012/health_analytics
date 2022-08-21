@@ -1,5 +1,5 @@
 # health_analytics
-Health_Analyticsタスク関連のあれこれ
+Health_Analyticsタスクで因子分析をする関連のあれこれ
 
 ## data_structure.txt
   - データ構造についてまとめた.txtファイル
