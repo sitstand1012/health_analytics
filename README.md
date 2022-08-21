@@ -23,3 +23,6 @@ Health_Analyticsタスクで因子分析をする関連のあれこれ
 2. 解凍する、すると「archive」というファイルができているはず
 3. そのファイル内にある「Key_indicator_districtwise.csv」へのパスをl.10のdirに代入する(また、l.4のshapedfilenameは適当に設定してください)
 4. conda環境下で、fa_analytics.pyのあるディレクトリにて```python fa_analytics.py```する
+
+### TBD
+- プログラムに簡単なコメントを追加する(きがむいたら)
