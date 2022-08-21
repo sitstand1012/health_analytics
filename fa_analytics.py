@@ -7,7 +7,7 @@ from factor_analyzer import FactorAnalyzer
 import pandas as pd
 import scipy
 
-dir=r"\Path\to\Key_indicator_districtwise.csv"
+dir=r"C:\Users\SitSt\Downloads\archive\Key_indicator_districtwise.csv"
 alldatas=[]
 length=0
 discardindex=[]
@@ -24,7 +24,6 @@ with open(dir) as f:
 
 discardindex=list(set(discardindex))
 discardindex.sort()
-print(len(discardindex),length,len(alldatas))
 shaped_data=[]
 for i in range(len(alldatas)):
     data=[]
@@ -37,10 +36,8 @@ for i in range(len(alldatas)):
             data.append(item)
     shaped_data.append(data)
 
-print(len(shaped_data[0]))
 data_labels=shaped_data[0][1:]
-print(len(data_labels))
-shapedfilename=r"\path\to\Key_indicator_districtwise_shaped.csv"
+shapedfilename=r"C:\Users\SitSt\Downloads\archive\Key_indicator_districtwise_shaped.csv"
 
 with open(shapedfilename,"w",newline="") as f:
     writer=csv.writer(f)
@@ -61,7 +58,6 @@ befcnt=len(data_labels)
 print("iteration:{0} starts".format(it+1))
 ei=scipy.linalg.eig(dfs.corr())[0]
 ei=list(map(lambda x:float(x), ei))
-#print(ei)
 
 allsu=sum(ei)
 cum=0
@@ -77,9 +73,8 @@ print("n_component={0}".format(n_components))
 #kmo_val=calculate_kmo(dfs)
 #print(kmo_val)
 
-fa = FactorAnalyzer(n_factors=n_components,method="principal",rotation="quartimin")
+fa = FactorAnalyzer(n_factors=n_components,method="principal",rotation="geomin_obl")
 fa.fit(dfs)
-print(len(fa.loadings_),len(fa.loadings_[0]))
 res = pd.DataFrame(fa.loadings_, columns=['factor{0}'.format(i+1) for i in range(n_components)])
 
 #res["communalities"]=fa.get_communalities()
@@ -114,3 +109,4 @@ for i in range(n_components):
             print(l[j])
             cnt+=1
     print("contain {0} variables".format(cnt))
+    print()
