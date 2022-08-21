@@ -25,4 +25,4 @@ Health_Analyticsタスクで因子分析をする関連のあれこれ
 4. conda環境下で、fa_analytics.pyのあるディレクトリにて```python fa_analytics.py```する
 
 ### TBD
-- プログラムに簡単なコメントを追加する(きがむいたら)
+- プログラムに簡単なコメントを追加する(ほんとうにきがむいたら)
